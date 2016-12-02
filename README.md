@@ -56,20 +56,18 @@
 
 ## 设计范例：
 
-GET /productions						获取所有产品信息列表
-GET /productions?limit=10&start=100&orderby=name	带各种限制条件的查询
-
-
-GET /productions/1234		获取某个特定产品的信息，基于产品ID
-GET /productions/1234/snapshot	获取id为1234这一产品的包含更多detail的复合资源
-GET /productions/1234/venders	获取id为1234这一产品的供应商信息
-
-
-POST /productions		增加一个新的产品，数据格式为JSON放在RequestBody里
-POST /productions/1234	增加一个vender给产品1234，vender数据放在RequestBody里
-PUT /productions/1234	增加或修改某产品信息，数据格式为JSON放在RequestBody里
-DELETE /productions		删除所有产品信息
-DELETE /productions/1234	删除某产品信息
+例子 | 解释
+--- | ---
+GET /productions | 获取所有产品信息列表
+GET /productions?limit=10&start=100&orderby=name | 带各种限制条件的查询
+GET /productions/1234 | 获取某个特定产品的信息，基于产品ID
+GET /productions/1234/snapshot | 获取id为1234这一产品的包含更多detail的复合资源
+GET /productions/1234/venders | 获取id为1234这一产品的供应商信息
+POST /productions | 增加一个新的产品，数据格式为JSON放在RequestBody里
+POST /productions/1234 | 增加一个vender给产品1234，vender数据放在RequestBody里
+PUT /productions/1234 | 增加或修改某产品信息，数据格式为JSON放在RequestBody里
+DELETE /productions | 删除所有产品信息
+DELETE /productions/1234 | 删除某产品信息
 
 
 
