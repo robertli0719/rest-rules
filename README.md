@@ -1,5 +1,3 @@
-# rest-rules
-
 # REST API 设计规则
 
 
