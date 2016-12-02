@@ -3,9 +3,9 @@
 # REST API 设计规则
 
 
-作者：Robert Li
-时间：2016-12-01 1.0.0
-
+作者：Robert Li  
+时间：2016-12-01  
+版本：1.0.0  
 
 ## 名词定义：
 * 无状态(stateless) 从客户端到服务器的每个请求都必须包含理解请求所必需的信息。
@@ -36,9 +36,9 @@
 
 
 ## 权限控制
-由于REST request 应为无状态的，因此不能将用户的登陆状态绑定到session之中，因此API应通过access token来控制访问权限。用户在登录时需要post其用户名与密码来获得服务器端生成的access token。服务器验证用户身份后发回token给客户端，客户端在本地一个安全的地方保存这一token，并在之后的每次request中都包含这一token来表明身份。
+由于REST request 应为无状态的，因此不能将用户的登陆状态绑定到session之中，因此API应通过access token来控制访问权限。用户在登录时需要post其用户名与密码来获得服务器端生成的access token。服务器验证用户身份后发回token给客户端，客户端在本地一个安全的地方保存这一token，并在之后的每次request中都包含这一token来表明身份。  
 
-考虑到JS webapp的web storage无法防御XSS (使用webpack后很多第三方lab被打包入同一个js)，因此推荐将token以http-only的形式存储入cookie中，使前端JS无法触碰到token。
+考虑到JS webapp的web storage无法防御XSS (使用webpack后很多第三方lab被打包入同一个js)，因此推荐将token以http-only的形式存储入cookie中，使前端JS无法触碰到token。  
 
 
 ## 缓存使用
@@ -51,7 +51,7 @@
 * PUT方法用于修改资源，或创建那些id由客户端所创建的资源
 * DELETE方法用于删除资源
 
-（解释：POST不可用于修改资源，因为修改操作应该是幂等性操作。对于id由客户端所创建的资源，不应提供POST操作，而将创建与修改操作合并到PUT来执行saveOrUpdate）
+（解释：POST不可用于修改资源，因为修改操作应该是幂等性操作。对于id由客户端所创建的资源，不应提供POST操作，而将创建与修改操作合并到PUT来执行saveOrUpdate）  
 
 
 ## 设计范例：
